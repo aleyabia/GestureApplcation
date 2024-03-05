@@ -1,8 +1,4 @@
-"""
-Created on Thu Jan 28 00:44:25 2021
 
-@author: chakati
-"""
 import cv2
 import csv
 import numpy as np
@@ -16,10 +12,6 @@ from sklearn.metrics.pairwise import cosine_similarity
 ## import the frame extractor class
 from frameextractor import frameExtractor
 
-# =============================================================================
-# Get the penultimate layer for trainig data
-# =============================================================================
-# your code goes here
 # Extract the middle frame of each gesture video
 
 # Define the paths to your training videos and where you want to save the frames
@@ -54,14 +46,7 @@ for video_filename in os.listdir(training_videos_path):
         # Append the feature vector to the list
         feature_vectors.append(feature_vector)
 
-# Now feature_vectors contains the penultimate layer of the training set
-# You can save it or use it for further processing, e.g., training a gesture recognition model
 
-# =============================================================================
-# Get the penultimate layer for test data
-# =============================================================================
-# your code goes here 
-# Extract the middle frame of each gesture video
 
 # Define the paths to your test videos and where you want to save the frames
 test_videos_path = 'traindata'
@@ -102,12 +87,6 @@ for video_filename in os.listdir(test_videos_path):
 # Convert the list of test feature vectors to a NumPy array
 test_feature_vectors = np.array(test_feature_vectors)
 
-
-# =============================================================================
-# Recognize the gesture (use cosine similarity for comparing the vectors)
-# =============================================================================
-# Load the penultimate layer of the training set (feature_vectors from Task 1)
-# ... Your previous code ...
 # Convert the list of feature vectors to a NumPy array
 training_feature_vectors = np.array(feature_vectors)
 
